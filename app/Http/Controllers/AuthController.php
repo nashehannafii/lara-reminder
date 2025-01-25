@@ -12,24 +12,19 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $isRegister = $request->daftarBtn;
-        $nohp = $request->nohp;
         if ($isRegister == 1) {
             $validator = Validator::make($request->all(), [
                 'nohp' => 'required|string|unique:daftar_nomor,nohp',
             ]);
 
             if ($validator->fails()) {
-
-                $user = DaftarNomor::where('nohp', $nohp)->first();
-
-                if ($user->status == 1) {
-                    return response()->json(['message' => $validator->errors()->first()], 400);
-                }
+                return response()->json(['message' => $validator->errors()->first()], 400);
             }
         }
         $url_send_wa = env('SEND_WA_URL', 'http://localhost:3000/send-message');
 
         $otp = rand(100000, 999999); // Generate OTP  
+        $nohp = $request->nohp;
 
         // Kirim OTP melalui WhatsApp  
         $response = Http::post($url_send_wa, [
