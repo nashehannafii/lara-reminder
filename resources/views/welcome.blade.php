@@ -15,7 +15,7 @@
                 <main class="mt-6">
                     <div class="text-center">
                         <h1 class="text-2xl font-bold text-black dark:text-white">
-                            Daftarkan nomor anda untuk pengingat absensi harian
+                            Daftarkan nomor anda untuk pengingat absensi harian staff
                         </h1>
                     </div>
                     <div class="mt-8">
