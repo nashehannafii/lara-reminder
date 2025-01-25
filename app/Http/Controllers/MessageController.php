@@ -67,7 +67,7 @@ https://ekhidmah.unida.gontor.ac.id/kehadiran/index
 
 
 
-MyRemind
+MyReminder
 https://myreminder.foxecho.id/
 ";
         foreach ($nomors as $nomor) {
@@ -120,7 +120,7 @@ https://ekhidmah.unida.gontor.ac.id/kehadiran/index
 
 
 
-MyRemind
+MyReminder
 https://myreminder.foxecho.id/
         ";
         foreach ($nomors as $nomor) {
