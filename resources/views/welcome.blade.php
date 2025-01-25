@@ -53,7 +53,7 @@
                     <!-- FAQ Item 1 -->
                     <div class="faq-item border-b pb-4">
                         <button class="faq-question text-lg font-semibold text-black dark:text-white w-full text-left">
-                            1. Bagaimana cara mendaftar untuk pengingat absensi?
+                            Bagaimana cara mendaftar untuk pengingat absensi?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
                             Masukkan nomor handphone Anda pada form yang tersedia, lalu klik "Daftar" dan lakukan verifikasi berupa otp yang kami kirimkan melalui nomor WhatsApp yang akan didaftarkan setelah berhasil. Kami
@@ -63,7 +63,7 @@
                     <!-- FAQ Item 2 -->
                     <div class="faq-item border-b pb-4 mt-6">
                         <button class="faq-question text-lg font-semibold text-black dark:text-white w-full text-left">
-                            2. Apakah layanan ini gratis?
+                            Apakah layanan ini gratis?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
                             Ya, layanan pengingat absensi ini gratis.
@@ -72,7 +72,7 @@
                     <!-- FAQ Item 3 -->
                     <div class="faq-item border-b pb-4 mt-6">
                         <button class="faq-question text-lg font-semibold text-black dark:text-white w-full text-left">
-                            3. Bagaimana cara berhenti menerima pengingat?
+                            Bagaimana cara berhenti menerima pengingat?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
                             Masukkan nomor handphone Anda pada form yang tersedia, lalu klik "Hentikan" dan lakukan verifikasi berupa otp yang kami kirimkan melalui nomor WhatsApp yang akan dihentikan.
@@ -82,7 +82,7 @@
                     <!-- FAQ Item 4 -->
                     <div class="faq-item border-b pb-4 mt-6">
                         <button class="faq-question text-lg font-semibold text-black dark:text-white w-full text-left">
-                            4. Apa yang harus dilakukan jika saya mengalami masalah?
+                            Apa yang harus dilakukan jika saya mengalami masalah?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
                             Jika Anda mengalami masalah, silakan mengirimkan email ke <a href="mailto:nashehannafii@gmail.com">nashehannafii@gmail.com</a>
