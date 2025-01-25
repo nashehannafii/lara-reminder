@@ -29,6 +29,11 @@ class AuthController extends Controller
                     $sudahTerdaftar = true;
                 }
             }
+        } else {
+            $checkUser = DaftarNomor::where('nohp', $nohp)->first();
+            if (empty($checkUser)) {
+                return response()->json(['message' => 'Nomor Tidak Terdaftar.'], 200);
+            }
         }
         $url_send_wa = env('SEND_WA_URL', 'http://localhost:3000/send-message');
 
