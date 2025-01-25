@@ -11,6 +11,9 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        $nohp = $request->nohp;
+        $sudahTerdaftar = false;
+
         $isRegister = $request->daftarBtn;
         if ($isRegister == 1) {
             $validator = Validator::make($request->all(), [
@@ -18,7 +21,13 @@ class AuthController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return response()->json(['message' => $validator->errors()->first()], 400);
+                $checkUser = DaftarNomor::where('nohp', $nohp)->first();
+
+                if ($checkUser->status == 1) {
+                    return response()->json(['message' => $validator->errors()->first()], 400);
+                } else {
+                    $sudahTerdaftar = true;
+                }
             }
         }
         $url_send_wa = env('SEND_WA_URL', 'http://localhost:3000/send-message');
@@ -35,10 +44,16 @@ class AuthController extends Controller
         if ($response->successful()) {
             // Simpan nomor dan OTP ke database
             if ($isRegister == 1) {
-                DaftarNomor::create([
-                    'nohp' => $nohp,
-                    'otp' => $otp
-                ]);
+                if ($sudahTerdaftar) {
+                    $user = DaftarNomor::where('nohp', $nohp)->first();
+                    $user->otp = $otp;
+                    $user->save();
+                } else {
+                    DaftarNomor::create([
+                        'nohp' => $nohp,
+                        'otp' => $otp
+                    ]);
+                }
             } else {
                 $user = DaftarNomor::where('nohp', $nohp)->first();
                 $user->otp = $otp;
