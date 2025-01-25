@@ -57,7 +57,7 @@
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
                             Masukkan nomor handphone Anda pada form yang tersedia, lalu klik "Daftar" dan lakukan verifikasi berupa otp yang kami kirimkan melalui nomor WhatsApp yang akan didaftarkan setelah berhasil. Kami
-                            akan mengirimkan pengingat absensi setiap hari setiap pagi dan sore.
+                            akan mengirimkan pengingat absensi setiap hari Sabtu-Kamis pagi dan sore.
                         </div>
                     </div>
                     <!-- FAQ Item 2 -->
