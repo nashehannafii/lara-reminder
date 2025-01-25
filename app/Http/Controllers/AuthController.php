@@ -28,7 +28,7 @@ class AuthController extends Controller
 
         // Kirim OTP melalui WhatsApp  
         $response = Http::post($url_send_wa, [
-            'number' => $nohp,
+            'phoneNumber' => $nohp,
             'message' => "Your OTP is: $otp"
         ]);
 
@@ -74,7 +74,7 @@ class AuthController extends Controller
                 $user->delete();
 
                 $response = Http::post($url_send_wa, [
-                    'number' => $request->nohp,
+                    'phoneNumber' => $request->nohp,
                     'message' => "Nomor Anda sudah tidak berlangganan!"
                 ]);
 
@@ -83,7 +83,7 @@ class AuthController extends Controller
             $user->status = true;
             $user->save();
             $response = Http::post($url_send_wa, [
-                'number' => $request->nohp,
+                'phoneNumber' => $request->nohp,
                 'message' => "Nomor Anda berhasil diverifikasi!"
             ]);
 

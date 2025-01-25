@@ -23,7 +23,7 @@ class MessageController extends Controller
         foreach ($nomors as $nomor) {
             try {
                 $response = Http::post($url_send_wa, [
-                    'number' => $nomor->nohp,
+                    'phoneNumber' => $nomor->nohp,
                     'message' => "Halo"
                 ]);
 
@@ -68,7 +68,7 @@ https://ekhidmah.unida.gontor.ac.id/kehadiran/index
         foreach ($nomors as $nomor) {
             try {
                 $response = Http::post($url_send_wa, [
-                    'number' => $nomor->nohp,
+                    'phoneNumber' => $nomor->nohp,
                     'message' => $message
                 ]);
 
@@ -116,7 +116,7 @@ https://ekhidmah.unida.gontor.ac.id/kehadiran/index
         foreach ($nomors as $nomor) {
             try {
                 $response = Http::post($url_send_wa, [
-                    'number' => $nomor->nohp,
+                    'phoneNumber' => $nomor->nohp,
                     'message' => $message
                 ]);
 
