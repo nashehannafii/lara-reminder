@@ -10,7 +10,8 @@
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-        <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
+        <div
+            class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                 <main class="mt-6">
                     <div class="text-center">
@@ -43,10 +44,76 @@
                     </div>
                 </main>
             </div>
+
+            <!-- FAQ Section -->
+            <div class="w-full max-w-2xl px-6 lg:max-w-7xl mt-12">
+                <h2 class="text-2xl font-bold text-black dark:text-white text-center">FAQ (Pertanyaan yang Sering
+                    Diajukan)</h2>
+                <div class="mt-8">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item border-b pb-4">
+                        <button class="faq-question text-lg font-semibold text-black dark:text-white w-full text-left">
+                            1. Bagaimana cara mendaftar untuk pengingat absensi?
+                        </button>
+                        <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
+                            Anda cukup memasukkan nomor handphone Anda pada form yang tersedia, lalu klik "Daftar". Kami
+                            akan mengirimkan pengingat absensi setiap hari.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item border-b pb-4 mt-6">
+                        <button class="faq-question text-lg font-semibold text-black dark:text-white w-full text-left">
+                            2. Apakah layanan ini gratis?
+                        </button>
+                        <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
+                            Ya, layanan pengingat absensi ini sepenuhnya gratis bagi semua staff yang terdaftar.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item border-b pb-4 mt-6">
+                        <button class="faq-question text-lg font-semibold text-black dark:text-white w-full text-left">
+                            3. Bagaimana cara berhenti menerima pengingat?
+                        </button>
+                        <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
+                            Jika Anda ingin berhenti menerima pengingat, cukup klik tombol "Hentikan" yang ada di
+                            halaman ini.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item border-b pb-4 mt-6">
+                        <button class="faq-question text-lg font-semibold text-black dark:text-white w-full text-left">
+                            4. Apa yang harus dilakukan jika saya mengalami masalah?
+                        </button>
+                        <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
+                            Jika Anda mengalami masalah, silakan hubungi tim support kami melalui kontak yang tersedia
+                            di website.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
     <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach((question) => {
+            question.addEventListener('click', () => {
+                // Toggle class hidden pada jawaban
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('hidden');
+
+                // Ubah tanda + menjadi - jika konten terbuka, dan sebaliknya
+                if (answer.classList.contains('hidden')) {
+                    question.innerHTML = question.innerHTML.replace('−', '+');
+                } else {
+                    question.innerHTML = question.innerHTML.replace('+', '−');
+                }
+            });
+        });
+
         // Event Listeners for Buttons
         document.getElementById('daftarBtn').addEventListener('click', function() {
             updateStatus("1", "0");
@@ -61,29 +128,29 @@
             const statusMessage = document.getElementById('statusMessage');
 
             fetch('/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    nohp,
-                    daftarBtn: daftarValue,
-                    hapusBtn: hapusValue
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        nohp,
+                        daftarBtn: daftarValue,
+                        hapusBtn: hapusValue
+                    })
                 })
-            })
-            .then(response => response.json())
-            .then(data => {
-                statusMessage.textContent = data.message;
+                .then(response => response.json())
+                .then(data => {
+                    statusMessage.textContent = data.message;
 
-                if (data.message.includes('OTP sent successfully')) {
-                    showVerificationForm(nohp);
-                }
-            })
-            .catch(error => {
-                statusMessage.textContent = 'An error occurred. Please try again.';
-                console.error('Error:', error);
-            });
+                    if (data.message.includes('OTP sent successfully')) {
+                        showVerificationForm(nohp);
+                    }
+                })
+                .catch(error => {
+                    statusMessage.textContent = 'An error occurred. Please try again.';
+                    console.error('Error:', error);
+                });
         }
 
         function showVerificationForm(nohp) {
@@ -115,21 +182,24 @@
                 const verifyStatusMessage = document.getElementById('verifyStatusMessage');
 
                 fetch('/verify', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    },
-                    body: JSON.stringify({ nohp, otp })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    verifyStatusMessage.textContent = data.message;
-                })
-                .catch(error => {
-                    verifyStatusMessage.textContent = 'An error occurred. Please try again.';
-                    console.error('Error:', error);
-                });
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({
+                            nohp,
+                            otp
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        verifyStatusMessage.textContent = data.message;
+                    })
+                    .catch(error => {
+                        verifyStatusMessage.textContent = 'An error occurred. Please try again.';
+                        console.error('Error:', error);
+                    });
             });
         }
     </script>
