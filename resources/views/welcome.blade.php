@@ -75,7 +75,7 @@
                             3. Bagaimana cara berhenti menerima pengingat?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
-                            Masukkan nomor handphone Anda pada form yang tersedia, lalu klik "Hentikan" dan lakukan verifikasi berupa otp yang kami kirimkan melalui nomor WhatsApp yang akan dihentikan setelah berhasil.
+                            Masukkan nomor handphone Anda pada form yang tersedia, lalu klik "Hentikan" dan lakukan verifikasi berupa otp yang kami kirimkan melalui nomor WhatsApp yang akan dihentikan.
                             Selamat anda telah berhasil menghentikan layanan.
                         </div>
                     </div>
