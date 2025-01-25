@@ -56,7 +56,7 @@
                             1. Bagaimana cara mendaftar untuk pengingat absensi?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
-                            Anda cukup memasukkan nomor handphone Anda pada form yang tersedia, lalu klik "Daftar". Kami
+                            Masukkan nomor handphone Anda pada form yang tersedia, lalu klik "Daftar" dan lakukan verifikasi berupa otp yang kami kirimkan melalui nomor WhatsApp yang akan didaftarkan setelah berhasil. Kami
                             akan mengirimkan pengingat absensi setiap hari.
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                             2. Apakah layanan ini gratis?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
-                            Ya, layanan pengingat absensi ini sepenuhnya gratis bagi semua staff yang terdaftar.
+                            Ya, layanan pengingat absensi ini gratis.
                         </div>
                     </div>
                     <!-- FAQ Item 3 -->
@@ -75,8 +75,8 @@
                             3. Bagaimana cara berhenti menerima pengingat?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
-                            Jika Anda ingin berhenti menerima pengingat, cukup klik tombol "Hentikan" yang ada di
-                            halaman ini.
+                            Masukkan nomor handphone Anda pada form yang tersedia, lalu klik "Hentikan" dan lakukan verifikasi berupa otp yang kami kirimkan melalui nomor WhatsApp yang akan dihentikan setelah berhasil.
+                            Selamat anda telah berhasil menghentikan layanan.
                         </div>
                     </div>
                     <!-- FAQ Item 4 -->
@@ -85,8 +85,7 @@
                             4. Apa yang harus dilakukan jika saya mengalami masalah?
                         </button>
                         <div class="faq-answer text-gray-700 dark:text-gray-400 mt-2 hidden">
-                            Jika Anda mengalami masalah, silakan hubungi tim support kami melalui kontak yang tersedia
-                            di website.
+                            Jika Anda mengalami masalah, silakan mengirimkan email ke <a href="mailto:nashehannafii@gmail.com">nashehannafii@gmail.com</a>
                         </div>
                     </div>
                 </div>
