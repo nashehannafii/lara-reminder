@@ -64,6 +64,11 @@ https://central.unida.gontor.ac.id/site/login
 
 Cek Kehadiran
 https://ekhidmah.unida.gontor.ac.id/kehadiran/index
+
+
+
+MyRemind
+https://myreminder.foxecho.id/
 ";
         foreach ($nomors as $nomor) {
             try {
@@ -112,6 +117,11 @@ https://central.unida.gontor.ac.id/site/login
 
 Cek Kepulangan
 https://ekhidmah.unida.gontor.ac.id/kehadiran/index
+
+
+
+MyRemind
+https://myreminder.foxecho.id/
         ";
         foreach ($nomors as $nomor) {
             try {
