@@ -60,7 +60,7 @@ class MessageController extends Controller
 Reminder Kehadiran
 
 Pastikan anda sudah login
-https://central.unida.gontor.ac.id/site/login
+https://ekhidmah.unida.gontor.ac.id/site/login
 
 Cek Kehadiran
 https://ekhidmah.unida.gontor.ac.id/kehadiran/index
@@ -109,11 +109,14 @@ https://myreminder.foxecho.id/
         $message = "
 Reminder Kepulangan
 
-Formulir laporan kinerja harian berikut: 
+Form Kinerja - LAMA: 
 https://forms.gle/qxNc1vQs2rZsm8dT8
 
+Form Kinerja - BARU: 
+https://forms.gle/RnqfTuUnECYAwcXE9
+
 Pastikan anda sudah login
-https://central.unida.gontor.ac.id/site/login
+https://ekhidmah.unida.gontor.ac.id/site/login
 
 Cek Kepulangan
 https://ekhidmah.unida.gontor.ac.id/kehadiran/index
